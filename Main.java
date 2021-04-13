@@ -11,9 +11,9 @@ ad ogni iterazione, il proprio nome ed il numero di iterazioni eseguite
 (cioè i metri percorsi). 
 
 Dopo aver eseguito 100 iterazioni, il thread stampa su schermo un messaggio di notifica del proprio arrivo.
-Successivamente implementare la classifica dei corridori, 
-sincronizzando l'accesso alla risorsa chiamata "classifica" condivisa tra i threads corridori, 
-che dovrà contenere il nome dei corridori in ordine di arrivo. Stampare la classifica.
+Successivamente implementare la CLASSIFICA dei corridori, 
+sincronizzando l'accesso alla risorsa chiamata "CLASSIFICA" condivisa tra i threads corridori, 
+che dovrà contenere il nome dei corridori in ordine di arrivo. Stampare la CLASSIFICA.
 */
 
 public class Main {
@@ -21,10 +21,10 @@ public class Main {
         
         Corridore.METRI = 100;
         Corridore.STAMPA_ARRIVO = true;
-        Corridore.OGNI_QUANTO_STAMPARE = 10;
+        Corridore.OGNI_QUANTO_STAMPARE = 1;
         
         ArrayList<Corridore> lista = new ArrayList<>();
-        int n = 7; //numero players
+        int n = 10; //numero players
         
         for (int i = 0; i < n; i++) {
             lista.add(new Corridore("Macchinetta-"+(i+1)));

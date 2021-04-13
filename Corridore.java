@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Corridore extends Thread{
 
     public static int METRI = 100;
-    public static ArrayList<String> classifica = new ArrayList<>();
+    public static ArrayList<String> CLASSIFICA = new ArrayList<>();
     public static boolean STAMPA_ARRIVO = false;
     public static int OGNI_QUANTO_STAMPARE = 1;
     
@@ -19,11 +19,12 @@ public class Corridore extends Thread{
             if((i+1)%OGNI_QUANTO_STAMPARE == 0) System.out.println(super.getName() + " " + (i+1) + "m");
         }
         assegnazioneClassifica(super.getName());
+        //assegnazioneClassifica(super.getName());
     }
     
     public static synchronized void assegnazioneClassifica(String nome){
         if(STAMPA_ARRIVO) stampaArrivo(nome);
-        classifica.add(nome);
+        CLASSIFICA.add(nome);
     }
     
     public static void stampaArrivo(String nome){
@@ -31,8 +32,8 @@ public class Corridore extends Thread{
     }
     
     public static void stampaClassifica(){
-        for (int i = 0; i < classifica.size(); i++) {
-            System.out.println("n." + (i+1) + " > " +classifica.get(i));
+        for (int i = 0; i < CLASSIFICA.size(); i++) {
+            System.out.println("n." + (i+1) + " > " +CLASSIFICA.get(i));
         }
     }
     
